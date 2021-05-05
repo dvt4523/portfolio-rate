@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from pandas.tseries.offsets import BDay
-import tabula
-import os
+import os, tabula
 from datetime import datetime
 
 
@@ -13,8 +12,7 @@ file = 'SampleVCBS.pdf'
 
 #Read pdf
 def read_file(file):
-    return tabula.read_pdf(file, pages='all', multiple_tables=True)
-
+    return tabula.io.read_pdf(file, pages='all', multiple_tables=True)
 def feature_engineering(file):
     tables = read_file(file)
 #%% Feature Engineering
