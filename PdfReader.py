@@ -12,7 +12,10 @@ file = 'SampleVCBS.pdf'
 
 #Read pdf
 def read_file(file):
-    return tabula.io.read_pdf(file, pages='all', multiple_tables=True)
+    return tabula.read_pdf(file, pages='all', multiple_tables=True)
+
+# read_file(file)
+
 def feature_engineering(file):
     tables = read_file(file)
 #%% Feature Engineering
