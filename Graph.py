@@ -15,7 +15,7 @@ def dateShorten(dateString):
     dt = datetime.strptime(dateString,'%Y-%m-%dT%H:%M:%S%z')
     return dt.strftime('%d/%m')
 
-data = MarketstackApi.requestData(4,PdfReader.df)
+data = MarketstackApi.requestData(0,PdfReader.df)
 
 def axis_generate(data):
     x = []
@@ -39,6 +39,7 @@ def graph_generate(data):
     plt.scatter(x, y)
     plt.plot(myline, mymodel(myline))
 
+# graph_generate(data)
 # print(xlabel)
 # print(x)
 # print(y)
